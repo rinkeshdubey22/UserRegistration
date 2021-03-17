@@ -18,9 +18,25 @@ public class UserRegistration {
 			}
 	}
 
+	public static void isLastNameValid() {
+
+		System.out.println("Enter Your Last Name");
+                String lastName = scan.nextLine();
+                String regex = "^[A-Z]{1}[a-z]{2,}$";
+                        if (lastName.matches(regex)) {
+                                System.out.println("Your Last Name is Valid");
+
+                        } else {
+                                System.out.println("Your Last Name is Invalid");
+
+                        }
+
+	}
+
 	public static void main(String[] args) {
 		//calling method to validate first name
 		isFirstNameValid();
+		isLastNameValid();
 	}
 
 }
