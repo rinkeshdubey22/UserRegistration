@@ -46,12 +46,27 @@ public class UserRegistration {
 		}
 	}
 
+	 private static void checkMobileNo() {
+                System.out.println("Enter Your Mobile No");
+                String mobileNo = scan.nextLine();
+                String regex = ("^[0-9]{2}[ ][0-9]{10}$");
+                        if (mobileNo.matches(regex)) {
+                                System.out.println("Your Moile No is Valid");
+
+                        } else {
+                               	System.out.println("Your Mobile No is Invalid");
+
+                        }
+
+		}
+
+
 	public static void main(String[] args) {
 		//calling method to validate first name
 		isFirstNameValid();
 		isLastNameValid();
 		checkEmailId();
-
+		checkMobileNo();
 	}
 
 }
