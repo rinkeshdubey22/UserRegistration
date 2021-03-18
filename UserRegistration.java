@@ -33,10 +33,25 @@ public class UserRegistration {
 
 	}
 
+	public static void checkEmailId() {
+		System.out.println("Enter Your E-mail");
+		String emailId = scan.nextLine();
+		String regex = "^[a-zA-Z0-9]+([.+-_][a-zA-Z0-9]+)*@[a-zA-z0-9]+.[a-zA-Z]{2}([.][a-zA-Z]{2,4}){0,1}$";
+		if (emailId.matches(regex)) {
+			System.out.println("Email Id Is Valid");
+
+		}else {
+			System.out.println("Invalid Email Id");
+
+		}
+	}
+
 	public static void main(String[] args) {
 		//calling method to validate first name
 		isFirstNameValid();
 		isLastNameValid();
+		checkEmailId();
+
 	}
 
 }
