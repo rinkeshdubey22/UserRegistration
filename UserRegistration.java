@@ -60,6 +60,19 @@ public class UserRegistration {
 
 		}
 
+	private static void isPasswordValid() {
+		System.out.println("Enter Your Password");
+		String password = scan.nextLine();
+		String regex = "[a-zA-Z0-9]{8}";
+			if (password.matches(regex)) {
+				System.out.println("Your password Is Valid");
+			} else {
+				System.out.println("This Password Is Invalid");
+
+			}
+
+	}
+
 
 	public static void main(String[] args) {
 		//calling method to validate first name
@@ -67,6 +80,7 @@ public class UserRegistration {
 		isLastNameValid();
 		checkEmailId();
 		checkMobileNo();
+		isPasswordValid();
 	}
 
 }
