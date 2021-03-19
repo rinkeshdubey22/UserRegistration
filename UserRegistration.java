@@ -63,27 +63,15 @@ public class UserRegistration {
 	private static void isPasswordValid() {
 		System.out.println("Enter Your Password");
 		String password = scan.nextLine();
-		boolean upperCase = false;
-		char[] passwordArray = password.toCharArray();
+		String regex = "^[A-z]{1}+[a-z]{5,}+[0-9]{1}";
+			if (password.matches(regex)) {
+				System.out.println("Password is Valid");
 
-		for (int i = 0; i<passwordArray.length; i++) {
+			} else {
+				System.out.println("Password is Invalid");
 
-			if (Character.isUpperCase(passwordArray[i])) {
-
-				upperCase = true;
 			}
 		}
-		if (passwordArray.length >= 8 && upperCase) {
-
-			System.out.println("Password is Valid");
-
-		} else {
-
-			System.out.println("Password is Invalid");
-		}
-
-	}
-
 
 	public static void main(String[] args) {
 		//calling method to validate first name
