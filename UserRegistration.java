@@ -63,13 +63,24 @@ public class UserRegistration {
 	private static void isPasswordValid() {
 		System.out.println("Enter Your Password");
 		String password = scan.nextLine();
-		String regex = "[a-zA-Z0-9]{8}";
-			if (password.matches(regex)) {
-				System.out.println("Your password Is Valid");
-			} else {
-				System.out.println("This Password Is Invalid");
+		boolean upperCase = false;
+		char[] passwordArray = password.toCharArray();
 
+		for (int i = 0; i<passwordArray.length; i++) {
+
+			if (Character.isUpperCase(passwordArray[i])) {
+
+				upperCase = true;
 			}
+		}
+		if (passwordArray.length >= 8 && upperCase) {
+
+			System.out.println("Password is Valid");
+
+		} else {
+
+			System.out.println("Password is Invalid");
+		}
 
 	}
 
@@ -77,9 +88,13 @@ public class UserRegistration {
 	public static void main(String[] args) {
 		//calling method to validate first name
 		isFirstNameValid();
+		//calling method to validate last name
 		isLastNameValid();
+		//calling method to validate E-mail Id
 		checkEmailId();
+		//calling method to validate Mobile No
 		checkMobileNo();
+		//calling method to validate password
 		isPasswordValid();
 	}
 
