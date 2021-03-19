@@ -63,7 +63,7 @@ public class UserRegistration {
 	private static void isPasswordValid() {
 		System.out.println("Enter Your Password");
 		String password = scan.nextLine();
-		String regex = "^[A-z]{1}+[a-z]{5,}+[0-9]{1}";
+		String regex = "^[A-z]{1}+[a-z]{4,}+[0-9]{1,}+[@$!%*#?&]{1,}";
 			if (password.matches(regex)) {
 				System.out.println("Password is Valid");
 
